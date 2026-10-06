@@ -5,24 +5,22 @@ Fineline delicado e realismo preto e branco, desde 2020.
 
 Prévia: https://azeugral.github.io/andre-azevedo/ (com `noindex` até ter domínio).
 
-## Identidade v4 (06/10): layout padrão, simétrico
+## Identidade v5 (06/10): logo do cliente + topo no modelo DAC
 
-A v3 (trilho lateral, nome em pé, faixas assimétricas) foi rejeitada: "ficou tudo torto". Voltamos ao modelo padrão.
-
-- **Fontes do LRGZ:** Unbounded nos títulos, IBM Plex Sans no texto e JetBrains Mono nos rótulos e botões.
-- **Paleta de luxo**, com a estrutura das referências: uma âncora escura, um metal e um neutro, poucas cores.
-  - ônix `#0b0b0a` (fundo);
-  - oxblood `#5c1a1b` → `#45120f` (seções de destaque: Estilos e a chamada final);
-  - ouro `#c9a96e` (botões, rótulos e detalhes);
-  - marfim `#efe9df` (texto).
-- **Logo ΛΛ:** um A em fio + um A cheio + um ponto dourado (`assets/img/logo.svg`, `favicon.svg`).
-- **Layout:**
-  - nav no topo com o logo à esquerda, os links no centro e o botão "Pedir orçamento" à direita; menu em gaveta no celular;
-  - abertura em duas colunas iguais;
-  - seções com título centralizado e grades regulares;
-  - estilos em dois cartões iguais, sobre em duas colunas e passos em três cartões.
-- **Botões:** retos, em ouro sólido ou com contorno. Ao passar o mouse, o marfim sobe por baixo. Fotos em moldura de fio dourado.
-- **Pendentes:** "a preencher" com um losango dourado.
+- **Logo oficial** (enviado pelo usuário): o original em `_ref/cliente/logo-andre-original.webp` já vem com fundo transparente. Recortado em `assets/img/logo-andre-1200.webp` e `-640.webp`.
+- **Topo como na DAC Art Ink:**
+  - logo grande centralizado (560 px na home, 320 px nas internas via `body.interna`);
+  - barra de menu fixa logo abaixo: Início · Trabalhos · Sobre · Orçamento;
+  - hero de texto centralizado abaixo do menu.
+- **Rodapé centralizado:** logo, frase, 3 colunas (Páginas, Redes, Estúdio), aviso 18+ e assinatura.
+- **Fonte do logo:** Rye (a mais próxima no Google Fonts, western/vitoriana com esporões) em títulos, menu, rótulos e botões. IBM Plex Sans no texto corrido.
+- **Cores:**
+  - ônix `#0b0b0a`;
+  - oxblood `#5c1a1b` (seções de destaque e o brilho atrás do logo);
+  - ouro areia `#ecc590` (tirado do próprio logo, `#f2cb96`);
+  - marfim `#efe9df`.
+- **Favicon:** "A" em Rye dentro de um anel duplo, com a estrela de 4 pontas do logo. A fonte está em `tools/logo/favicon.html`: renderizar a 800 px e reduzir para `favicon.ico`, `favicon-32.png` e `assets/img/icone-180/512.png`.
+- **Texto:** "André" com acento, como no logo. O @ do Instagram segue sem acento.
 
 ## Estrutura
 

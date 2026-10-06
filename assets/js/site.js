@@ -1,4 +1,4 @@
-/* Andre Azevedo — comportamento do site */
+/* André Azevedo — comportamento do site */
 window.CONFIG = {
   instagram: 'andreazevedotattoo',
   tiktok: 'andreazevedotattoo',
@@ -233,7 +233,7 @@ window.CONFIG = {
     var ok = document.querySelector('.ok');
     function texto() {
       var f = new FormData(form);
-      var l = ['Oi, Andre! Vim pelo site e queria um orçamento.', ''];
+      var l = ['Oi, André! Vim pelo site e queria um orçamento.', ''];
       if (f.get('nome')) l.push('Nome: ' + f.get('nome'));
       if (f.get('estilo')) l.push('Estilo: ' + f.get('estilo'));
       if (f.get('local')) l.push('Local do corpo: ' + f.get('local'));
