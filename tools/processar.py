@@ -57,10 +57,9 @@ def main():
     js = 'window.OBRAS = ' + json.dumps(lista, ensure_ascii=False, separators=(',', ':')) + ';\n'
     open(os.path.join(SITE, 'assets', 'js', 'obras.js'), 'w', encoding='utf-8').write(js)
 
-    # foto do artista: preto e branco, como o realismo dele
-    p = ImageOps.exif_transpose(Image.open(os.path.join(ORIG, 'Andre Azevedo.jpg'))).convert('L')
+    # foto do artista, em cor
+    p = ImageOps.exif_transpose(Image.open(os.path.join(ORIG, 'Andre Azevedo.jpg'))).convert('RGB')
     p = p.crop((0, round(p.height * .05), p.width, p.height))  # tira o reflexo da luminária no topo
-    p = ImageOps.autocontrast(p, cutoff=.5)
     for w in (700, 1300):
         c = p.resize((w, round(p.height * w / p.width)), Image.LANCZOS) if p.width > w else p
         c.save(os.path.join(SITE, 'assets', 'img', f'andre-{w}.webp'), 'WEBP', quality=82, method=6)

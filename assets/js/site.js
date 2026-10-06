@@ -74,7 +74,7 @@ window.CONFIG = {
     b.className = 'obra';
     b.dataset.i = i;
     b.innerHTML = '<img src="' + src(o, 640) + '" alt="' + esc(o.d + ' — ' + NOME[o.e]) + '" loading="lazy" decoding="async" width="640" height="' + Math.round(640 / o.r) + '">' +
-      '<span class="leg">' + esc(o.d) + '<br>' + NOME[o.e] + '</span>';
+      '<span class="leg">' + esc(o.d) + '<small>' + esc(NOME[o.e]) + '</small></span>';
     return b;
   }
 
