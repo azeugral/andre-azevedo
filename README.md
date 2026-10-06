@@ -5,17 +5,28 @@ Fineline delicado e realismo preto e branco, desde 2020.
 
 Prévia: https://azeugral.github.io/andre-azevedo/ (com `noindex` até ter domínio).
 
-## Identidade: preto minimalista + vermelhão (v2, 06/10)
+## Identidade v3 (06/10)
 
-A v1 (régua de diluição, Bodoni) foi trocada a pedido: o traço fino e os botões com sombra davam cara de IA.
+Base preta, texto osso e um vermelho só, o `#d6402b` da camiseta da foto dele. Fonte Host Grotesk.
 
-- **Cores:** base preta `#0e0e0d`, texto osso `#ecebe7` e cinzas `#9a9893` / `#6c6a66`. Uma cor extra, o vermelhão `#d6402b`, que vem da camiseta da foto dele. Uma seção clara (Como agendar) dá respiro.
-- **Fonte:** Host Grotesk (300 nos títulos, 400/500 no texto), uma família só. O arquivo está em `_ref/fontes`.
-- **Marca e favicon:** monograma "AA" num quadrado vermelho.
-- **Botão:** duas células, rótulo e seta. Ao passar o mouse, o osso sobe por baixo do rótulo e a seta atravessa a célula. A versão em contorno (`.btn.linha`) é para a ação secundária. Sem sombra e sem canto arredondado.
-- **Assinatura:** cantos de decalque em vermelho nas fotos (`.decalque`), que lembram as marcas de alinhamento do stencil. Na abertura, a foto colorida sobe revelada e os cantos entram depois.
-- **Progresso:** um fio vermelho no topo da tela.
-- **Pendentes:** campos sem informação aparecem como "a preencher" (`.a-preencher`, com um quadradinho vermelho).
+- **Logo ΛΛ** (`assets/img/logo.svg`, `favicon.svg`, ícones em `assets/img`):
+  - um A em fio fino (fineline) e um A cheio (realismo), ligados na base;
+  - um ponto vermelho marca onde os dois se tocam, como a ponta da agulha;
+  - na abertura o logo se desenha: o fio, depois o cheio, depois o ponto;
+  - os ícones PNG são gerados a partir de `tools/logo/icone.html`.
+- **Navegação:**
+  - no desktop, um trilho vertical à esquerda com links em pé, a barra de progresso e "Orçamento" num bloco vermelho embaixo;
+  - no celular, uma doca fixa embaixo (logo, Trabalhos, Sobre e Orçamento em vermelho), sem menu hambúrguer.
+- **Abertura:** o nome fica em pé na lateral, a foto colorida no centro com o botão preso no canto, e as informações à esquerda.
+- **Trabalhos recentes:** uma faixa que rola de lado (arrastar, setas e contador). Os cartões se alternam em altura, e o último leva para os 63.
+- **Estilos:** blocos alternados, com o título grande, a contagem em vermelho e 3 fotos em composição deslocada.
+- **Sobre:** a ficha técnica fica sobre a foto.
+- **Como agendar:** passos em linhas, com o título fixo ao lado.
+- **Chamada final:** os botões ficam empilhados na lateral.
+- **Página de trabalhos:** grade com peças em destaque (2×2) para dar ritmo.
+- **Orçamento:** duas colunas, com o texto fixo de um lado e o formulário do outro.
+- **Botões:** duas células, rótulo e seta. Cantos de decalque vermelhos nas fotos.
+- **Pendentes:** informação que falta aparece como "a preencher" (`.a-preencher`).
 
 ## Estrutura
 

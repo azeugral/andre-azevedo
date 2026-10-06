@@ -12,41 +12,15 @@ window.CONFIG = {
   /* abertura */
   requestAnimationFrame(function () { setTimeout(function () { doc.classList.add('pronto'); }, 60); });
 
-  /* topo: fica sólido depois da abertura e some ao descer */
-  var topo = document.querySelector('.topo');
-  var ultimo = 0;
-  var prog = document.querySelectorAll('.progresso i');
+  /* progresso de rolagem: trilho (desktop) e doca (celular) */
+  var prog = document.querySelectorAll('[data-prog]');
   function aoRolar() {
-    var y = scrollY;
-    if (topo) {
-      topo.classList.toggle('solido', y > 40);
-      topo.classList.toggle('some', y > 400 && y > ultimo && !document.body.classList.contains('trava'));
-    }
-    ultimo = y;
-    if (prog.length) {
-      var t = Math.max(1, document.documentElement.scrollHeight - innerHeight);
-      var p = Math.min(1, y / t) * prog.length;
-      prog.forEach(function (el, i) { el.style.transform = 'scaleX(' + Math.max(0, Math.min(1, p - i)) + ')'; });
-    }
+    var t = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    var p = Math.min(1, scrollY / t).toFixed(4);
+    prog.forEach(function (el) { el.style.setProperty('--p', p); });
   }
   addEventListener('scroll', aoRolar, { passive: true });
   aoRolar();
-
-  /* gaveta do celular */
-  var abrir = document.querySelector('.abrir');
-  var gaveta = document.querySelector('.gaveta');
-  if (abrir && gaveta) {
-    abrir.addEventListener('click', function () {
-      var a = abrir.getAttribute('aria-expanded') !== 'true';
-      abrir.setAttribute('aria-expanded', a);
-      gaveta.classList.toggle('aberta', a);
-      document.body.classList.toggle('trava', a);
-      document.body.style.overflow = a ? 'hidden' : '';
-    });
-    gaveta.addEventListener('click', function (e) {
-      if (e.target.closest('a')) { abrir.click(); }
-    });
-  }
 
   /* revelar ao rolar */
   var io = 'IntersectionObserver' in window && !reduz ? new IntersectionObserver(function (es) {
@@ -98,6 +72,62 @@ window.CONFIG = {
       el.appendChild(a);
     });
   });
+
+  // contagens por estilo (sup nos títulos)
+  document.querySelectorAll('[data-conta]').forEach(function (el) {
+    var e = el.dataset.conta;
+    el.textContent = e === 'todos' ? OBRAS.length : OBRAS.filter(function (o) { return o.e === e; }).length;
+  });
+
+  // miniaturas do orçamento
+  document.querySelectorAll('[data-mini]').forEach(function (el) {
+    el.dataset.mini.split(',').forEach(function (id) {
+      el.insertAdjacentHTML('beforeend', '<img src="assets/obras/' + id + '-640.webp" alt="" loading="lazy" decoding="async">');
+    });
+  });
+
+  // faixa de recentes: rola de lado, com setas e contador
+  var faixa = document.querySelector('[data-faixa]');
+  if (faixa) {
+    var n = +faixa.dataset.limite || 10;
+    OBRAS.slice(0, n).forEach(function (o) { faixa.appendChild(fig(o, OBRAS.indexOf(o))); });
+    faixa.insertAdjacentHTML('beforeend', '<a class="faixa-fim" href="trabalhos.html"><strong>' + OBRAS.length + '</strong><span>Ver todos os trabalhos' +
+      '<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5"/></svg></span></a>');
+    var cont = document.querySelector('[data-faixa-cont]');
+    var ant = document.querySelector('[data-faixa-ant]');
+    var prox = document.querySelector('[data-faixa-prox]');
+    var passo = function () { var c = faixa.children[0]; return c ? c.getBoundingClientRect().width + 8 : 300; };
+    var total = faixa.children.length;
+    function marcar() {
+      var i = Math.round(faixa.scrollLeft / passo());
+      var fim = faixa.scrollLeft + faixa.clientWidth >= faixa.scrollWidth - 4;
+      if (fim) i = total - 1;
+      cont.textContent = String(Math.min(i + 1, total)).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+      ant.disabled = faixa.scrollLeft < 4;
+      prox.disabled = fim;
+    }
+    faixa.addEventListener('scroll', function () { requestAnimationFrame(marcar); }, { passive: true });
+    ant.addEventListener('click', function () { faixa.scrollBy({ left: -passo(), behavior: reduz ? 'auto' : 'smooth' }); });
+    prox.addEventListener('click', function () { faixa.scrollBy({ left: passo(), behavior: reduz ? 'auto' : 'smooth' }); });
+    marcar();
+    // arrastar com o mouse no desktop
+    var arr = null;
+    faixa.addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse') arr = { x: e.clientX, s: faixa.scrollLeft, m: false }; });
+    addEventListener('pointermove', function (e) {
+      if (!arr) return;
+      var dx = e.clientX - arr.x;
+      if (Math.abs(dx) > 5) { arr.m = true; faixa.style.scrollSnapType = 'none'; faixa.scrollLeft = arr.s - dx; }
+    });
+    addEventListener('pointerup', function () {
+      if (!arr) return;
+      var moveu = arr.m; arr = null; faixa.style.scrollSnapType = '';
+      if (moveu) {
+        var bloq = function (e) { e.stopPropagation(); e.preventDefault(); };
+        faixa.addEventListener('click', bloq, true);
+        setTimeout(function () { faixa.removeEventListener('click', bloq, true); }, 60);
+      }
+    });
+  }
 
   var grade = document.querySelector('[data-grade]');
   if (grade) {
