@@ -50,9 +50,9 @@ p{margin:0 0 1em}
 /* ---------- topo: logo grande centralizado, menu logo abaixo (modelo DAC) ---------- */
 .topo{display:grid;place-items:center;padding:clamp(32px,5vw,60px) var(--g);background:radial-gradient(ellipse 60% 75% at 50% 55%,rgba(92,26,27,.55),transparent 72%)}
 .topo-logo{display:block}
-.topo-logo img{width:min(560px,80vw);height:auto;filter:drop-shadow(0 0 28px rgba(236,197,144,.12))}
+.topo-logo img{width:min(400px,68vw);height:auto;filter:drop-shadow(0 0 28px rgba(236,197,144,.12))}
 body.interna .topo{padding:clamp(22px,3.4vw,36px) var(--g)}
-body.interna .topo-logo img{width:min(320px,62vw)}
+body.interna .topo-logo img{width:min(260px,54vw)}
 .topo-logo img{opacity:0;transform:translateY(10px) scale(.985);transition:opacity 1s var(--ease),transform 1s var(--ease)}
 .pronto .topo-logo img{opacity:1;transform:none}
 .barra{position:sticky;top:0;z-index:40;background:rgba(11,11,10,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}

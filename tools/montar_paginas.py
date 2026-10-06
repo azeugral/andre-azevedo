@@ -2,7 +2,7 @@
 Troque V para furar o cache de CSS/JS.
 Marcadores nas páginas: <!--seta--> e <!--logo-->."""
 import os, re, glob
-V = '7'
+V = '8'
 AQUI = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.dirname(AQUI)
 BASE = 'https://azeugral.github.io/andre-azevedo/'  # CONFIRMAR: trocar quando houver domínio
@@ -40,7 +40,7 @@ HEAD = '''<!doctype html>
 <a class="sr" href="#conteudo">Pular para o conteúdo</a>
 <div class="progresso" data-prog aria-hidden="true"><i></i></div>
 <header class="topo">
-  <a class="topo-logo" href="./" aria-label="André Azevedo Tattoo, início"><img src="assets/img/logo-andre-1200.webp" srcset="assets/img/logo-andre-640.webp 640w, assets/img/logo-andre-1200.webp 1200w" sizes="(min-width:760px) 560px, 80vw" alt="André Azevedo Tattoo" width="1200" height="670"></a>
+  <a class="topo-logo" href="./" aria-label="André Azevedo Tattoo, início"><img src="assets/img/logo-andre-1200.webp" srcset="assets/img/logo-andre-640.webp 640w, assets/img/logo-andre-1200.webp 1200w" sizes="(min-width:760px) 400px, 68vw" alt="André Azevedo Tattoo" width="1200" height="670"></a>
 </header>
 <nav class="barra" aria-label="Principal"><ul class="menu">{menu}</ul></nav>
 <main id="conteudo">

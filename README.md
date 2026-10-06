@@ -9,7 +9,7 @@ Prévia: https://azeugral.github.io/andre-azevedo/ (com `noindex` até ter domí
 
 - **Logo oficial** (enviado pelo usuário): o original em `_ref/cliente/logo-andre-original.webp` já vem com fundo transparente. Recortado em `assets/img/logo-andre-1200.webp` e `-640.webp`.
 - **Topo como na DAC Art Ink:**
-  - logo grande centralizado (560 px na home, 320 px nas internas via `body.interna`);
+  - logo centralizado (400 px na home, 260 px nas internas via `body.interna`);
   - barra de menu fixa logo abaixo: Início · Trabalhos · Sobre · Orçamento;
   - hero de texto centralizado abaixo do menu.
 - **Rodapé centralizado:** logo, frase, 3 colunas (Páginas, Redes, Estúdio), aviso 18+ e assinatura.
@@ -19,7 +19,10 @@ Prévia: https://azeugral.github.io/andre-azevedo/ (com `noindex` até ter domí
   - oxblood `#5c1a1b` (seções de destaque e o brilho atrás do logo);
   - ouro areia `#ecc590` (tirado do próprio logo, `#f2cb96`);
   - marfim `#efe9df`.
-- **Favicon:** "A" em Rye dentro de um anel duplo, com a estrela de 4 pontas do logo. A fonte está em `tools/logo/favicon.html`: renderizar a 800 px e reduzir para `favicon.ico`, `favicon-32.png` e `assets/img/icone-180/512.png`.
+- **Favicon:** "A" dourado em Rye dentro de um anel duplo, com a estrela de 4 pontas do logo.
+  - O fundo é transparente, com o mesmo contorno escuro fino do logo, para ler em aba clara e escura.
+  - A fonte está em `tools/logo/favicon.html`: renderizar a 800 px sobre preto, converter o preto em alfa e reduzir.
+  - O `icone-180` (apple-touch) mantém o fundo ônix, porque o iOS não aceita transparência.
 - **Texto:** "André" com acento, como no logo. O @ do Instagram segue sem acento.
 
 ## Estrutura
