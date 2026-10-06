@@ -14,13 +14,29 @@ window.CONFIG = {
 
   /* progresso de rolagem: trilho (desktop) e doca (celular) */
   var prog = document.querySelectorAll('[data-prog]');
+  var topo = document.querySelector('.topo');
   function aoRolar() {
+    if (topo) topo.classList.toggle('solido', scrollY > 30);
     var t = Math.max(1, document.documentElement.scrollHeight - innerHeight);
     var p = Math.min(1, scrollY / t).toFixed(4);
     prog.forEach(function (el) { el.style.setProperty('--p', p); });
   }
   addEventListener('scroll', aoRolar, { passive: true });
   aoRolar();
+
+  /* gaveta do celular */
+  var abrir = document.querySelector('.abrir');
+  var gaveta = document.querySelector('.gaveta');
+  if (abrir && gaveta) {
+    abrir.addEventListener('click', function () {
+      var a = abrir.getAttribute('aria-expanded') !== 'true';
+      abrir.setAttribute('aria-expanded', a);
+      gaveta.classList.toggle('aberta', a);
+      topo.classList.toggle('solido', a || scrollY > 30);
+      document.body.style.overflow = a ? 'hidden' : '';
+    });
+    gaveta.addEventListener('click', function (e) { if (e.target.closest('a')) abrir.click(); });
+  }
 
   /* revelar ao rolar */
   var io = 'IntersectionObserver' in window && !reduz ? new IntersectionObserver(function (es) {

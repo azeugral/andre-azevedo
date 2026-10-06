@@ -4,79 +4,72 @@
 ---
 <section class="abertura" aria-labelledby="nome">
   <div class="wrap ab">
-    <div class="ab-topo">
-      <p class="ab-status rot"><i aria-hidden="true"></i>Agenda aberta</p>
-      <a class="rot" href="https://www.instagram.com/andreazevedotattoo/" target="_blank" rel="noopener">@andreazevedotattoo</a>
-    </div>
-    <h1 class="nome" id="nome"><span>Andre</span><span>Azevedo</span></h1>
-    <figure class="ab-foto">
-      <div class="decalque">
-        <div class="quadro"><img src="assets/img/andre-700.webp" srcset="assets/img/andre-700.webp 700w, assets/img/andre-1300.webp 1300w" sizes="(min-width:960px) 34vw, 100vw" alt="Andre Azevedo tatuando" width="700" height="812" fetchpriority="high"></div>
-        <a class="btn ab-cta" href="orcamento.html"><span>Pedir orçamento</span><i><!--seta--></i></a>
+    <div class="ab-texto">
+      <p class="rot ab-status">Agenda aberta</p>
+      <h1 class="nome" id="nome"><span>Andre</span><span class="ouro">Azevedo</span></h1>
+      <p class="lead">Tatuagem delicada em fineline e realismo em preto e branco, em Capão Bonito, SP.</p>
+      <div class="acoes">
+        <a class="btn" href="orcamento.html">Pedir orçamento <!--seta--></a>
+        <a class="btn linha" href="trabalhos.html">Ver trabalhos</a>
       </div>
-    </figure>
-    <div class="ab-base">
-      <p class="lead">Tatuagem delicada em fineline e realismo em preto e branco.</p>
-      <a class="link" href="trabalhos.html"><span>Ver os 63 trabalhos</span><!--seta--></a>
       <ul class="ab-meta">
         <li>Cidade <b>Capão Bonito, SP</b></li>
-        <li>Desde <b>2020</b></li>
-        <li>Idade <b>18+</b></li>
+        <li>Tatua desde <b>2020</b></li>
+        <li>Atendimento <b>Só 18+</b></li>
       </ul>
     </div>
+    <figure class="ab-foto moldura">
+      <div class="quadro"><img src="assets/img/andre-700.webp" srcset="assets/img/andre-700.webp 700w, assets/img/andre-1300.webp 1300w" sizes="(min-width:960px) 45vw, 100vw" alt="Andre Azevedo tatuando" width="700" height="812" fetchpriority="high"></div>
+    </figure>
   </div>
 </section>
 
 <section class="secao" aria-labelledby="t-recentes">
-  <div class="wrap cab cab-linha">
-    <div>
+  <div class="wrap">
+    <div class="cab centro">
       <p class="rot">Portfólio</p>
       <h2 id="t-recentes" data-rv>Trabalhos recentes</h2>
+      <p class="lead" data-rv>Fotos dos trabalhos feitos pelo Andre. Toque numa foto para ampliar.</p>
     </div>
-    <div class="faixa-ctrl">
-      <span class="rot" data-faixa-cont>01 / 10</span>
-      <button class="seta-q" type="button" data-faixa-ant aria-label="Anteriores"><!--seta--></button>
-      <button class="seta-q" type="button" data-faixa-prox aria-label="Próximos"><!--seta--></button>
-    </div>
+    <div class="grade" data-grade data-limite="8"></div>
+    <div class="mais"><a class="btn linha" href="trabalhos.html">Ver todos os <span data-conta="todos"></span> trabalhos <!--seta--></a></div>
   </div>
-  <div class="faixa" data-faixa data-limite="10"></div>
 </section>
 
-<section class="secao" aria-label="Estilos">
+<section class="secao vinho" aria-labelledby="t-estilos">
   <div class="wrap">
-    <p class="rot estilos-rot">Estilos</p>
-    <article class="bloco">
-      <div class="bloco-texto" data-rv>
-        <h2 class="bloco-tit">Fineline<sup data-conta="fineline"></sup></h2>
+    <div class="cab centro">
+      <p class="rot">Estilos</p>
+      <h2 id="t-estilos" data-rv>Fineline e realismo P&amp;B</h2>
+      <p class="lead" data-rv>Os dois estilos que o Andre tatua: do traço fino ao degradê de cinza.</p>
+    </div>
+    <div class="estilos">
+      <article class="estilo" data-rv>
+        <div class="estilo-cab"><h3>Fineline</h3><span class="n"><span data-conta="fineline"></span> trabalhos</span></div>
         <p>Traço fino e delicado: letterings, flores, símbolos pequenos e composições leves.</p>
-        <a class="link" href="trabalhos.html?estilo=fineline"><span>Ver os trabalhos em fineline</span><!--seta--></a>
-      </div>
-      <div class="bloco-fotos" data-amostra="fineline" data-ids="aa-53,aa-48,aa-09"></div>
-    </article>
-    <article class="bloco inverso">
-      <div class="bloco-texto" data-rv>
-        <h2 class="bloco-tit">Realismo<sup data-conta="realismo"></sup></h2>
+        <div class="amostra" data-amostra="fineline" data-ids="aa-53,aa-48,aa-09"></div>
+        <a class="link" href="trabalhos.html?estilo=fineline">Ver fineline <!--seta--></a>
+      </article>
+      <article class="estilo" data-rv>
+        <div class="estilo-cab"><h3>Realismo P&amp;B</h3><span class="n"><span data-conta="realismo"></span> trabalhos</span></div>
         <p>Retratos, animais e figuras em preto e cinza, com volume e sombra.</p>
-        <a class="link" href="trabalhos.html?estilo=realismo"><span>Ver os trabalhos em realismo</span><!--seta--></a>
-      </div>
-      <div class="bloco-fotos" data-amostra="realismo" data-ids="aa-17,aa-19,aa-62"></div>
-    </article>
+        <div class="amostra" data-amostra="realismo" data-ids="aa-17,aa-19,aa-62"></div>
+        <a class="link" href="trabalhos.html?estilo=realismo">Ver realismo <!--seta--></a>
+      </article>
+    </div>
   </div>
 </section>
 
 <section class="secao" id="sobre" aria-labelledby="t-sobre">
   <div class="wrap sobre">
-    <figure data-rv>
-      <div class="decalque"><div class="quadro"><img src="assets/img/processo-640.webp" alt="Andre tatuando um Jesus em realismo" loading="lazy" width="640" height="1136"></div></div>
+    <figure class="moldura" data-rv>
+      <div class="quadro"><img src="assets/img/processo-640.webp" alt="Andre tatuando um Jesus em realismo" loading="lazy" width="640" height="1136"></div>
     </figure>
     <div class="sobre-texto">
       <p class="rot" data-rv>Sobre</p>
-      <h2 id="t-sobre" data-rv>Andre Azevedo</h2>
+      <h2 id="t-sobre" data-rv>Andre <span class="ouro">Azevedo</span></h2>
       <p class="lead" data-rv>Tatuador em Capão Bonito, no interior de São Paulo, desde 2020. Trabalha com fineline delicado e com realismo em preto e branco.</p>
-    </div>
-    <div class="ficha" data-rv>
-      <div class="ficha-cab"><span class="rot">Ficha</span><!--logo--></div>
-      <ul class="fatos">
+      <ul class="fatos" data-rv>
         <li><span>Cidade</span><span>Capão Bonito, SP</span></li>
         <li><span>Tatua desde</span><span>2020</span></li>
         <li><span>Estilos</span><span>Fineline · Realismo P&amp;B</span></li>
@@ -89,35 +82,29 @@
   </div>
 </section>
 
-<section class="secao claro" aria-labelledby="t-agendar">
-  <div class="wrap agendar">
-    <div class="cab">
+<section class="secao" aria-labelledby="t-agendar">
+  <div class="wrap">
+    <div class="cab centro">
       <p class="rot">Agendamento</p>
       <h2 id="t-agendar" data-rv>Como agendar</h2>
     </div>
-    <div>
-      <ol class="passos">
-        <li data-rv><span class="n" aria-hidden="true">1</span><h3>Mande a ideia</h3><p>Pelo formulário ou direto na DM: o que quer tatuar, onde no corpo e o tamanho aproximado. Fotos de referência ajudam.</p></li>
-        <li data-rv><span class="n" aria-hidden="true">2</span><h3>Orçamento e data</h3><p>O Andre responde com o valor e os horários livres na agenda.</p></li>
-        <li data-rv><span class="n" aria-hidden="true">3</span><h3>Sessão</h3><p>No dia marcado, a tattoo é feita no estúdio em Capão Bonito.</p></li>
-      </ol>
-      <p class="passos-nota"><span>Valores e sinal: <em class="a-preencher">a preencher</em></span><span>Cuidados pós-tattoo: <em class="a-preencher">a preencher</em></span></p>
-    </div>
+    <ol class="passos">
+      <li data-rv><span class="n" aria-hidden="true">01</span><h3>Mande a ideia</h3><p>Pelo formulário ou direto na DM: o que quer tatuar, onde no corpo e o tamanho aproximado. Fotos de referência ajudam.</p></li>
+      <li data-rv><span class="n" aria-hidden="true">02</span><h3>Orçamento e data</h3><p>O Andre responde com o valor e os horários livres na agenda.</p></li>
+      <li data-rv><span class="n" aria-hidden="true">03</span><h3>Sessão</h3><p>No dia marcado, a tattoo é feita no estúdio em Capão Bonito.</p></li>
+    </ol>
+    <p class="passos-nota"><span>Valores e sinal: <em class="a-preencher">a preencher</em></span><span>Cuidados pós-tattoo: <em class="a-preencher">a preencher</em></span></p>
   </div>
 </section>
 
-<section class="secao chamada" aria-labelledby="t-chamada">
-  <div class="wrap chamada-g">
-    <div>
-      <p class="rot" data-rv>Capão Bonito · SP</p>
-      <h2 id="t-chamada" data-rv>Agenda<br>aberta<i>.</i></h2>
-    </div>
-    <div class="lado" data-rv>
-      <p class="lead">Peça o orçamento pelo formulário ou direto na DM do Instagram.</p>
-      <div class="acoes">
-        <a class="btn" href="orcamento.html"><span>Pedir orçamento</span><i><!--seta--></i></a>
-        <a class="btn linha" data-dm href="https://www.instagram.com/andreazevedotattoo/" target="_blank" rel="noopener"><span>Chamar na DM</span><i><!--seta--></i></a>
-      </div>
+<section class="secao vinho chamada" aria-labelledby="t-chamada">
+  <div class="wrap centro">
+    <p class="rot" data-rv>Capão Bonito · SP</p>
+    <h2 id="t-chamada" data-rv>Agenda <span class="ouro">aberta</span></h2>
+    <p class="lead" data-rv>Peça o orçamento pelo formulário ou direto na DM do Instagram.</p>
+    <div class="acoes" data-rv>
+      <a class="btn" href="orcamento.html">Pedir orçamento <!--seta--></a>
+      <a class="btn linha" data-dm href="https://www.instagram.com/andreazevedotattoo/" target="_blank" rel="noopener">Chamar na DM</a>
     </div>
   </div>
 </section>
